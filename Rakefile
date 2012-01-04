@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'rake/gempackagetask'
+require 'rubygems/package_task'
 require 'rake/testtask'
 require 'rake/clean'
 require 'yard'
@@ -49,7 +49,7 @@ spec = Gem::Specification.new do |s|
     s.requirements << 'CUDA-enabled GPU'
 end
 
-Rake::GemPackageTask.new(spec) do |pkg|
+Gem::PackageTask.new(spec) do |pkg|
     pkg.need_tar_gz  = true
 end
 
