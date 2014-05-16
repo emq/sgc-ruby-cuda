@@ -15,7 +15,7 @@ def compile(src_str)
     out_file = Tempfile.new(["kernel", ".so"])
     out_file.close
 
-    case Config::CONFIG['target_os']
+    case RbConfig::CONFIG['target_os']
         when /darwin/    # Build universal binary for i386 and x86_64 platforms.
             f32 = Tempfile.new(["kernel32", ".so"])
             f64 = Tempfile.new(["kernel64", ".so"])

@@ -51,7 +51,7 @@ module CudaTestBase
     end
 
     def nvcc_build_dynamic_library(src_path, lib_path)
-        case Config::CONFIG['target_os']
+        case RbConfig::CONFIG['target_os']
             when /darwin/    # Build universal binary for i386 and x86_64 platforms.
                 f32 = Tempfile.new("rubycuda_test32.so")
                 f64 = Tempfile.new("rubycuda_test64.so")
